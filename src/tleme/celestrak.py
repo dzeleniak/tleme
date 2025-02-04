@@ -3,14 +3,15 @@ import sys
 import httpx
 from loguru import logger
 
-from tleme.settings import settings
+from tleme.settings import Settings
 from tleme.util import days_since_update, get_tle_data_path
 
 
 def download_sats():
+    settings = Settings()
     tle_path = get_tle_data_path()
     try:
-        sats = httpx.get(settings.TLE_QUERY_URL)
+        sats = httpx.get(settings.TLE_QUERY_BASE_URL)
         with open(tle_path, "w") as f:
             f.write(sats.text)
             logger.success("Successfully initialized catalog.")
