@@ -18,6 +18,7 @@ def days_since_update(file_path):
 @cache
 def get_tle_data_path():
     settings = Settings()
+    Path(f"{settings.TLE_DATA_DIRECTORY}").mkdir(exist_ok=True, parents=True)
     return Path(f"{settings.TLE_DATA_DIRECTORY}/{settings.TLE_DATA_FILENAME}")
 
 
