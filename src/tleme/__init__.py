@@ -1,3 +1,3 @@
-from tleme.app import initialize_sats
+from tleme.celestrak import initialize_sats
 
 initialize_sats()

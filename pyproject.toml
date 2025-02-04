@@ -9,8 +9,12 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "asyncclick>=8.1.8",
+    "geocoder>=1.38.1",
     "httpx>=0.28.1",
     "loguru>=0.7.3",
+    "pydantic-settings>=2.7.1",
+    "pydantic>=2.10.6",
+    "pyhigh>=0.0.6",
     "rich>=13.9.4",
     "skyfield>=1.49",
 ]
